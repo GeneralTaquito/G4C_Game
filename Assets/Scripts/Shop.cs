@@ -1,17 +1,40 @@
+using UnityEditor.Build;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    public GameObject ShopMenu;
     public bool Shopzone;
+    public Player Player;
+    public GameManager GM;
 
     void Update()
     {
         if (Shopzone && Input.GetKeyDown(KeyCode.E))
         {
-            if (ShopMenu != null)
+            if (Player.Dairy_Spirit == false)
             {
-                ShopMenu.SetActive(!ShopMenu.activeSelf);
+                Player.Dairy_Spirit = true;
+                Debug.Log("Gained Dairy Spirit");
+            }
+            if (Player.Grain_Spirit == false && GM.Dairy_Complete == true)
+            {
+                Player.Grain_Spirit = true;
+                Debug.Log("Gained Grain Spirit");
+            }
+            if (Player.Fruit_Spirit == false && GM.Grain_Complete == true)
+            {
+                Player.Fruit_Spirit = true;
+                Debug.Log("Gained Fruit Spirit");
+            }
+            if (Player.Veggie_Spirit == false && GM.Fruit_Complete == true)
+            {
+                Player.Veggie_Spirit = true;
+                Debug.Log("Gained Veggie Spirit");
+            }
+            if (Player.Protein_Spirit == false && GM.Veggie_Complete == true)
+            {
+                Player.Protein_Spirit = true;
+                Debug.Log("Gained Protein Spirit");
             }
         }
     }
@@ -31,11 +54,6 @@ public class Shop : MonoBehaviour
         {
             Shopzone = false;
             Debug.Log("noplaya");
-
-            if (ShopMenu != null && ShopMenu.activeSelf)
-            {
-                ShopMenu.SetActive(false);
-            }
         }
     }
 }

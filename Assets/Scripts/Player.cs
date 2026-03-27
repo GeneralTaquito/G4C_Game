@@ -6,6 +6,13 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB;
     public float SprintSpeed = 3.5f;
     public float Walkspeed = 2.5f;
+
+    // Bools for spirits
+    public bool Dairy_Spirit = false;
+    public bool Grain_Spirit = false;
+    public bool Fruit_Spirit = false;
+    public bool Veggie_Spirit = false;
+    public bool Protein_Spirit = false;
     void Update()
     {
         // The basic movement code for everything :p
