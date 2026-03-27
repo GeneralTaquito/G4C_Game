@@ -7,6 +7,12 @@ public class Shop : MonoBehaviour
     public Player Player;
     public GameManager GM;
 
+    public GameObject Floating1;
+    public GameObject Floating2;
+    public GameObject Floating3;
+    public GameObject Floating4;
+    public GameObject Floating5;
+
     void Update()
     {
         if (Shopzone && Input.GetKeyDown(KeyCode.E))
