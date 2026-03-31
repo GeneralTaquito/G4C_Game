@@ -11,10 +11,6 @@ public class The_Menu : MonoBehaviour
     {
         StartCoroutine(LoadGame(SceneManager.GetActiveScene().buildIndex + 1));
     }
-    public void Credits()
-    {
-        // lol
-    }
 
     IEnumerator LoadGame(int levelIndex)
     {

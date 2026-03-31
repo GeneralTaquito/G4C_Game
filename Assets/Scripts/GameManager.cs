@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,6 +26,7 @@ public class GameManager : MonoBehaviour
 
 
     public GameObject Player;
+    public Plating Plating;
     void Update()
     {
         if (Dairy_Complete != false && !Mark1)
@@ -63,6 +63,11 @@ public class GameManager : MonoBehaviour
             Mark5 = true;
             Debug.Log("Protein IS FINISHED");
 
+        }
+
+        if (Dairy_Complete ==true && Grain_Complete == true && Fruit_Complete == true && Veggie_Complete == true && Protein_Complete == true)
+        {
+            Plating.Allhere();
         }
     }
 }
